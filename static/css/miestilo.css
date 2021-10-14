@@ -1,0 +1,52 @@
+h1{
+    Font:serif;
+    text-align: center;
+    background-color: lightblue;
+    color: #377ba8;
+}
+form{
+    width: 350px;
+    padding:16px ;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+form input{
+    padding: 3px 10px;
+    border:1px solid #080808;
+    border-radius: 3px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+}
+
+#logo1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: auto;
+}
+
+.boton{
+    font-weight:bold;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
