@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Nuevo Producto
+        </title>
+        <meta charset="utf-8"/>
+        <meta
+            name="description"
+        />
+        <link rel="stylesheet" type="text/css" href="{{  url_for('static',  filename='css/miestilo.css')  }}"/>
+    </head>
+    <body>
+        <section class="content">
+            {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </section>
+        <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        name="logo1"
+        id="logo1"
+        alt="logo"
+        />
+
+        <nav>
+            <h1 ><strong>Agregar Producto</strong></h1>
+            <ul>
+                {% if g.user[6]!="usuario" %}
+                    <li>
+                        <a class="action" href="{{ url_for('adminusuarios') }}">Administrar Usuarios</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a class="action" href="{{ url_for('inicio') }}">inicio</a>
+                </li>
+                <li>
+                    <a class="action" href="{{ url_for('log_out') }}">Logut</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form 
+            action="/nuevoproducto" 
+            method="POST" 
+            name="formRegistro"
+        >
+            <div>
+                <label for="nombre" class="label1">Nombre del producto</label>
+                <input type="text" name="nombre" id="nombre" class="input1" />
+            </div>
+
+            <img
+                src="{{ url_for('static', filename='images/AgregarImagen.png') }}"
+                name="agregarimagen"
+                id="agregarimagen"
+                alt="agregarimagen"
+            />
+            <input type=file name=file>
+            <div>
+                <label for="descripcion" class="label1">Descripción del producto</label>
+                <input type="text" name="descripcion" id="descripcion" size="50" style="height:100px;" class="input1"/>
+            </div>
+            <div>
+                <label for="precio" class="label1">Precio</label>
+                <input type="text" name="precio" id="precio" class="input1"/>
+            </div>
+
+            <input type="submit" value="Crear Producto" class="boton" />
+
+        </form>
+    </body>
+</html>

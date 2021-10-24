@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/miestilo.css') }}"
+    />
+</head>
+<body>
+  <section class="content">
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+  </section>
+    <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        name="logo"
+        id="logo"
+        alt="logo"
+        />
+    <form name="loginForm" action="/log_in" method="POST">
+        <div>
+          <label for="correo" class="label1">Correo</label>
+          <input type="text" name="correo" id="correo" class="input1"/>
+        </div>
+        <br>
+        <div>
+          <label for="password" class="label1">Contraseña</label>
+          <input type="password" name="password" id="password" class="input1"/>
+        </div>
+        <center>
+          <p>
+              <input type="checkbox" id="recordarme" name="recordarme"/> Recordar mi información de inicio de sesión
+          </p>
+        </center>
+        <input type="submit" value="Iniciar Sesion" class="boton"/>
+      </form>
+
+      <form
+        action="/register" 
+        method="GET" 
+        name="botonRegister"
+        >
+        <input type="submit" value="Crear Cuenta" class="boton"/>
+            
+        </form>
+
+</body>
+</html>
