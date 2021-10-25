@@ -1,0 +1,77 @@
+h1{
+    Font:serif;
+    text-align: center;
+    background-color: lightblue;
+    color: #377ba8;
+}
+form{
+    width: 500px;
+    padding:5px ;
+    border-radius: 10px;
+    margin: auto;
+}
+form input{
+    padding: 3px 10px;
+    border:1px solid #080808;
+    border-radius: 3px;
+}
+
+textarea{
+    width: 500px;
+    height: 50px;
+    padding:16px ;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.label1{
+    padding:5px ;
+    margin: auto;
+    text-align: center;
+    display: grid;
+}
+
+.input1{
+    padding: 3px 10px;
+    border:1px solid #080808;
+    border-radius: 3px;
+    margin: auto;
+    display: grid;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+}
+
+#logo1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: auto;
+}
+
+.boton{
+    font-weight:bold;
+    text-align: center;
+    margin:auto;
+    display: grid;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+
+  }
+
+td{
+    max-width: 500px;
+    overflow-wrap: anywhere;
+}
+table{
+width: 100%;
+}
