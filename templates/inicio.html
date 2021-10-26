@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link
+          rel="stylesheet"
+          href="{{ url_for('static', filename='css/miestilo.css') }}"
+        />
+    </head>
+
+    <body>
+        <section class="content">
+            {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </section>
+        <meta charset="UTF-8">
+        <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        name="logo"
+        id="logo"
+        alt="logo"
+        />
+        <nav>
+            <h1 ><strong>Seleccione un Producto</strong></h1>
+            <ul>
+                {% if g.user[6]!="usuario" %}
+                    <li>
+                        <a class="action" href="{{ url_for('nuevoproducto') }}">Agregar Producto</a>
+                    </li>
+                    <li>
+                        <a class="action" href="{{ url_for('adminusuarios') }}">Administrar Usuarios</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a class="action" href="{{ url_for('log_out') }}">Logut</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form
+            action="/inicio" 
+            method="POST" 
+            name="formComentario"
+            class="form1"
+        >
+            {% for prod in productos %}
+            <button name="boton" value="{% print (prod[0]) %}"><img class="img1" src="{% print (prod[4]) %}" /></button>
+            {% endfor %}
+        </form>
+
+    </body>
+</html>

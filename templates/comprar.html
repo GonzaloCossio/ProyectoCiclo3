@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wishlist</title>
+        <link
+          rel="stylesheet"
+          href="{{ url_for('static', filename='css/miestilo.css') }}"
+        />
+    </head>
+
+    <body>
+        <meta charset="UTF-8">
+        <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        name="logo"
+        id="logo"
+        alt="logo"
+        />
+        <nav>
+            <h1 ><strong>Gracias por su compra</strong></h1>
+            <ul>
+                {% if g.user[6]!="usuario" %}
+                    <li>
+                        <a class="action" href="{{ url_for('nuevoproducto') }}">Agregar Producto</a>
+                    </li>
+                    <li>
+                        <a class="action" href="{{ url_for('adminusuarios') }}">Administrar Usuarios</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a class="action" href="{{ url_for('inicio') }}">inicio</a>
+                </li>
+                <li>
+                    <a class="action" href="{{ url_for('log_out') }}">Logut</a>
+                </li>
+            </ul>
+        </nav>
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+          </tr>
+          <tr>
+            <td>{{producto[1]}}</td>
+            <td>
+              <img src="{% print (producto[4]) %}"/>
+            </td>
+            <td>{{producto[2]}}</td>
+            <td>${{producto[3]}}</td>
+          </tr>
+      </table>
+      <h1 ><strong>Su producto será enviado en los próximos días</strong></h1>
+    
+      <br>
+      <table id="table" name="table">
+          <tbody>
+              <tr>
+                  <th >Comentario</th>
+                  <th >Calificación</th>
+              </tr>
+              {% for come in comentarios %}
+                  {% if producto[0]==come[2] %}
+                  <tr>
+                      <td >{% print (come[3]) %}</td>
+                      <td >{% print (come[4]) %}</td>
+                  </tr>
+                  {% endif %}
+              {% endfor %}
+          </tbody>
+      </table>
+      <br>
+      <br>
+    
+    </body>
+</html>
